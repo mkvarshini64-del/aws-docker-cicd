@@ -16,5 +16,12 @@ pipeline {
                 sh 'ls -la app'
             }
         }
+
+        stage('Docker Build') {
+            steps {
+                echo 'Building Docker image...'
+                sh 'docker build -t travel-app:v1 .'
+            }
+        }
     }
 }
