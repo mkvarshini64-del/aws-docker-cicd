@@ -52,11 +52,11 @@ pipeline {
                             -u "$DOCKER_USERNAME" \
                             --password-stdin
 
-                        docker tag travel-app:v2 \
-                            $DOCKER_USERNAME/travel-app:v2
+                        docker tag travel-app:${BUILD_NUMBER} \
+                            $DOCKER_USERNAME/travel-app:${BUILD_NUMBER}
 
                         docker push \
-                            $DOCKER_USERNAME/travel-app:v2
+                            $DOCKER_USERNAME/travel-app:${BUILD_NUMBER}
 
                         docker logout
                     '''
