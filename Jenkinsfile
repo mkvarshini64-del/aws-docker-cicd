@@ -25,14 +25,14 @@ pipeline {
         }
 
         stage('Docker Build') {
-            steps {
-                echo 'Building Docker image...'
+    steps {
+        echo "Building Docker image version ${BUILD_NUMBER}..."
 
-                sh '''
-                    docker build \
-                        --platform linux/amd64 \
-                        -t travel-app:v2 .
-                '''
+        sh '''
+            docker build \
+                --platform linux/amd64 \
+                -t travel-app:${BUILD_NUMBER} .
+        '''
             }
         }
 
