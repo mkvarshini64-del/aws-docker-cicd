@@ -8,7 +8,7 @@ The project integrates GitHub, Jenkins, Docker, Docker Hub, and AWS services to 
 
 ## Architecture
 
-```text
+```
 Developer
     |
     v
